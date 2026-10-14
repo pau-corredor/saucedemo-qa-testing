@@ -34,7 +34,9 @@
 - **Resultado esperado:** se completa la compra y aparece el mensaje de confirmación
 - **Resultado real:** el botón Finish no permite completar la compra
 - **Comparación:** con `standard_user` la compra se completa
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `standard_user` (esperado): ![Finish funciona](../evidence/Error_user/standard_user_finish_button_ok.png)
+  - `error_user` (observado): ![Finish no funciona](../evidence/Error_user/error_user_finish_button_not_ok.png)
 
 ### BUG-02: En checkout, Last Name modifica First Name y Continue no avanza
 - **Usuario:** `problem_user`
@@ -50,7 +52,9 @@
 - **Resultado esperado:** los datos se completan correctamente y permite pasar a la pantalla de resumen del pedido
 - **Resultado real:** al escribir en Last Name no aparece nada en ese campo y se modifica el campo First Name; Continue no permite avanzar
 - **Comparación:** con `standard_user` los datos se completan y permite continuar
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `standard_user` (esperado): ![Datos completos](../evidence/Error_user/standard_user_checkout_info_ok.png)
+  - `problem_user` (observado): [Video](../evidence/Problem_user/problem_user_glitch.mp4)
 
 ### BUG-03: Un producto muestra "Item not found" y no aparece en el carrito aunque el contador sube
 - **Usuario:** `problem_user`
@@ -66,7 +70,9 @@
 - **Resultado real:** la página del producto muestra "Item not found". El botón "Add to cart" funciona y el contador del carrito sube en 1, pero al abrir el carrito está vacío
 - **Comparación:** con `standard_user` la página del producto se ve completa y el producto aparece en el carrito
 - **Nota:** desde la lista de productos no permite agregar este producto (ver BUG-05)
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `standard_user` (esperado): ![Producto completo](../evidence/Problem_user/standard_user_item.png)
+  - `problem_user` (observado): ![Item not found](../evidence/Problem_user/problem_user_item_not_found.png)
 
 ### BUG-04: Los precios de la lista no coinciden con los del detalle y el carrito
 - **Usuario:** `visual_user`
@@ -79,9 +85,11 @@
   3. Entrar al detalle del producto y comparar el precio
   4. Agregarlo al carrito, abrir el carrito y comparar el precio
 - **Resultado esperado:** el precio es el mismo en la lista, el detalle y el carrito
-- **Resultado real:** el precio de la lista es distinto al del detalle y al del carrito. Pasa con los 6 productos. Ejemplo: (producto, precio en la lista y precio en el detalle)
+- **Resultado real:** el precio de la lista es distinto al del detalle y al del carrito. Pasa con los 6 productos. Ejemplo: (Sauce Labs Backpack: $40.25 en la lista y $29.99 en el detalle)
 - **Comparación:** con `standard_user` el precio es el mismo en las tres pantallas
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `standard_user` (esperado): ![Precios correctos](../evidence/Visual_user/standard_user_prices_correct.png)
+  - `visual_user` (observado): ![Precios incorrectos en la lista](../evidence/Visual_user/visual_user_prices_incorrect.png)
 
 ### BUG-05: No permite agregar todos los productos ni quitarlos desde la lista y el detalle
 - **Usuario:** `error_user`, `problem_user`
@@ -99,7 +107,10 @@
   - `error_user`: solo permite agregar 3 productos (Sauce Labs Backpack, Bike Light y Onesie), tanto desde la lista como desde el detalle. No permite quitarlos desde la lista ni desde el detalle; solo desde el carrito
   - `problem_user`: desde la lista solo permite agregar los mismos 3 productos. Los otros 3 sí se pueden agregar desde el detalle. No permite quitar desde la lista, y en el detalle el botón sigue diciendo "Add to cart" aunque el producto ya está agregado. Desde el carrito sí se puede quitar
 - **Comparación:** con `standard_user` se pueden agregar los 6 productos y quitarlos desde la lista, el detalle y el carrito
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `standard_user` (esperado): ![Agrega los 6 productos](../evidence/Error_user/standard_user_add_items_shopping_car.png)
+  - `error_user` (observado): ![Solo agrega 3 productos](../evidence/Error_user/error_user_no_add_items_shopping_car.png)
+  - `problem_user` (observado): [Video](../evidence/Problem_user/problem_user_glitch.mp4)
 
 ### BUG-06: En checkout, Last Name no muestra lo escrito y no valida que esté vacío
 - **Usuario:** `error_user`
@@ -116,7 +127,9 @@
 - **Resultado real:** al escribir en Last Name no aparece nada en el campo. Aun con el campo vacío, Continue permite pasar a la pantalla de resumen sin mostrar ningún error
 - **Comparación:** con `standard_user` el apellido se muestra y, si el campo está vacío, aparece "Error: Last Name is required" y no deja avanzar
 - **Nota:** después de este paso, el botón Finish tampoco funciona (ver BUG-01)
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `standard_user` (esperado): ![Datos completos](../evidence/Error_user/standard_user_checkout_info_ok.png)
+  - `error_user` (observado): ![Last Name vacío](../evidence/Error_user/error_user_checkout_info_no_lastname.png)
 
 ### BUG-07: El ordenamiento de productos no funciona
 - **Usuario:** `error_user`, `problem_user`, `visual_user`
@@ -133,7 +146,11 @@
   - `problem_user`: la lista no cambia y no aparece ningún aviso
   - `visual_user`: la lista se reordena de forma aleatoria, sin respetar el nombre ni el precio
 - **Comparación:** con `standard_user` el ordenamiento por nombre y por precio funciona bien
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `standard_user` (esperado): ![Ordenamiento funciona](../evidence/Error_user/standard_user_filter_work.png)
+  - `error_user` (observado): ![Sorting is broken](../evidence/Error_user/error_user_filter_fail.png)
+  - `problem_user` (observado): [Video](../evidence/Problem_user/problem_user_glitch.mp4)
+  - `visual_user` (observado): [Video](../evidence/Visual_user/visual_user_no_order.mp4), la lista se reordena de forma aleatoria
 
 ### BUG-08: La página carga con demoras en varias pantallas
 - **Usuario:** `performance_glitch_user`
@@ -149,7 +166,7 @@
 - **Resultado esperado:** todas las pantallas cargan de inmediato
 - **Resultado real:** el login tarda cerca de 6 segundos y las acciones de los pasos 2 a 5 también se demoran en cargar. Todo funciona, pero con lentitud
 - **Comparación:** con `standard_user` las mismas acciones cargan de inmediato
-- **Evidencia:** (pendiente)
+- **Evidencia:** [Video](../evidence/Performance_glitch_user/performance_glitch_user_lag.mp4), demoras en el login y en varias pantallas
 
 ### BUG-09: Imágenes de productos incorrectas
 - **Usuario:** `problem_user`, `visual_user`
@@ -165,7 +182,14 @@
   - `visual_user`: el primer producto muestra la imagen de un perro; en el detalle se ve la correcta
   - `problem_user`: todos los productos muestran la imagen de un perro, y al abrir un producto el detalle corresponde a otro (por ejemplo, el nombre dice camiseta pero abre la ropa de bebé)
 - **Comparación:** con `standard_user` todas las imágenes corresponden a su producto
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - `problem_user`:
+    - `standard_user` (esperado): ![Imágenes correctas](../evidence/Problem_user/standard_user_item_photos.png)
+    - `problem_user` (observado): ![Todas con la imagen de un perro](../evidence/Problem_user/problem_user_no_item_photos.png)
+    - `problem_user` (observado): [Video](../evidence/Problem_user/problem_user_name_mismatch.mp4), el nombre del producto no coincide con el detalle que se abre
+  - `visual_user`:
+    - `standard_user` (esperado): ![Imagen correcta](../evidence/Visual_user/standard_user_image_correct.png)
+    - `visual_user` (observado): ![Imagen incorrecta en el primer producto](../evidence/Visual_user/visual_user_image_wrong.png)
 
 ### BUG-10: Elementos desalineados o fuera de lugar
 - **Usuario:** `visual_user`
@@ -183,4 +207,16 @@
   - El botón "Add to cart" del último producto está desplazado
   - En el carrito, el botón Checkout aparece arriba a la derecha; debería estar abajo, alineado con "Continue Shopping"
 - **Comparación:** con `standard_user` todos los elementos están alineados
-- **Evidencia:** (pendiente)
+- **Evidencia:**
+  - Botón "Add to cart" del último producto:
+    - `standard_user` (esperado): ![Botón alineado](../evidence/Visual_user/standard_user_button_aligned.png)
+    - `visual_user` (observado): ![Botón desplazado](../evidence/Visual_user/visual_user_button_not_aligned.png)
+  - Botón Checkout en el carrito:
+    - `standard_user` (esperado): ![Checkout alineado](../evidence/Visual_user/standard_user_checkout_button_aligned.png)
+    - `visual_user` (observado): ![Checkout fuera de lugar](../evidence/Visual_user/visual_user_checkout_button_not_aligned.png)
+  - Nombres de los productos:
+    - `standard_user` (esperado): ![Nombres alineados](../evidence/Visual_user/standard_user_name_aligned.png)
+    - `visual_user` (observado): ![Nombres desalineados](../evidence/Visual_user/visual_user_name_not_aligned.png)
+  - Carrito:
+    - `standard_user` (esperado): ![Carrito en su lugar](../evidence/Visual_user/standard_user_shopping_car.png)
+    - `visual_user` (observado): ![Carrito desplazado](../evidence/Visual_user/visual_user_shopping_car.png)
