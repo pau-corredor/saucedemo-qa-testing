@@ -84,6 +84,7 @@
 - **Usuarios con fallas:**
   - `error_user`: muestra "Sorting is broken! This error has been reported to Backtrace" con las 4 opciones
   - `problem_user`: la lista no cambia y no aparece ningún aviso
+  - `visual_user`: la lista se reordena de forma aleatoria, sin respetar el nombre ni el precio
 
 ### TC-08: Agregar un producto al carrito desde la lista
 - **Módulo:** Inventario
@@ -106,8 +107,8 @@
 - **Resultado real:** cada producto muestra su imagen correcta
 - **Estado:** Pasó
 - **Usuarios con fallas:**
-  - `problem_user`: todos los productos muestran la misma imagen incorrecta (un perro)
   - `visual_user`: el primer producto de la lista muestra la imagen de un perro; en el detalle se ve la correcta
+  - `problem_user`: todos los productos muestran la misma imagen incorrecta (un perro), y al abrir un producto el detalle corresponde a otro (por ejemplo, el nombre dice camiseta pero abre la ropa de bebé)
 
 ### TC-10: El precio de un producto es el mismo en la lista, el detalle y el carrito
 - **Módulo:** Inventario / Carrito
