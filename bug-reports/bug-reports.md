@@ -85,7 +85,7 @@
   3. Entrar al detalle del producto y comparar el precio
   4. Agregarlo al carrito, abrir el carrito y comparar el precio
 - **Resultado esperado:** el precio es el mismo en la lista, el detalle y el carrito
-- **Resultado real:** el precio de la lista es distinto al del detalle y al del carrito. Pasa con los 6 productos. Ejemplo: (Sauce Labs Backpack: $40.25 en la lista y $29.99 en el detalle)
+- **Resultado real:** el precio de la lista es distinto al del detalle y al del carrito. Pasa con los 6 productos. Ejemplo: Sauce Labs Backpack: $40.25 en la lista y $29.99 en el detalle
 - **Comparación:** con `standard_user` el precio es el mismo en las tres pantallas
 - **Evidencia:**
   - `standard_user` (esperado): ![Precios correctos](../evidence/Visual_user/standard_user_prices_correct.png)

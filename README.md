@@ -38,5 +38,8 @@ Jira (tablero Kanban y seguimiento), GitHub (repositorio), Google Chrome, grabac
 - Mapa de funcionalidades y lista de riesgos
 - Pruebas con números y caracteres especiales en los campos del checkout
 
+## Proyecto relacionado
+Los casos de prueba de este proyecto los automaticé con Playwright, Python y GitHub Actions en [saucedemo-playwright-tests](https://github.com/pau-corredor/saucedemo-playwright-tests).
+
 ## Autora
 Paula, Bogotá, Colombia.
